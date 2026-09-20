@@ -90,6 +90,10 @@ app.post('/api/feedback', (req, res) => {
     });
 });
 
-app.listen(PORT, () => {
-    console.log(`UI Component Mock Server running at http://localhost:${PORT}`);
-});
+module.exports = app;
+
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(`UI Component Mock Server running at http://localhost:${PORT}`);
+    });
+}
