@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,12 +8,20 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: system-ui, -apple-system, sans-serif; background: #f8fafc; color: #1e293b; padding: 30px 20px; line-height: 1.6; }
         .container { max-width: 960px; margin: 0 auto; }
-        header { background: #1e293b; color: white; padding: 32px; border-radius: 16px; text-align: center; margin-bottom: 30px; }
-        header h1 { font-size: 28px; margin-bottom: 8px; }
+        header { background: #1e293b; color: white; padding: 32px; border-radius: 16px; text-align: center; margin-bottom: 30px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); }
+        header h1 { font-size: 28px; margin-bottom: 8px; letter-spacing: -0.5px; }
         header p { color: #94a3b8; font-size: 15px; }
+        .badge-bar { margin-top: 14px; display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
+        .badge { display: inline-block; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; text-transform: uppercase; }
+        .badge-html { background: #ea580c; color: white; }
+        .badge-css { background: #0284c7; color: white; }
+        .badge-node { background: #16a34a; color: white; }
+        .badge-api { background: #7c3aed; color: white; }
+
         .section-box { background: white; border: 1px solid #e2e8f0; border-radius: 14px; padding: 24px; margin-bottom: 24px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.04); }
-        h2 { font-size: 18px; color: #0f172a; margin-bottom: 16px; border-bottom: 1px solid #e2e8f0; padding-bottom: 8px; }
+        h2 { font-size: 18px; color: #0f172a; margin-bottom: 16px; border-bottom: 1px solid #e2e8f0; padding-bottom: 8px; display: flex; align-items: center; justify-content: space-between; }
         .component-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+        
         /* Buttons */
         .btn { padding: 10px 18px; border-radius: 8px; font-weight: 600; font-size: 14px; cursor: pointer; border: none; transition: all 0.15s; }
         .btn-primary { background: #2563eb; color: white; }
@@ -24,24 +32,49 @@
         .btn-danger:hover { background: #dc2626; }
         .btn-success { background: #10b981; color: white; }
         .btn-success:hover { background: #059669; }
+        .btn-dark { background: #0f172a; color: white; }
+        .btn-dark:hover { background: #334155; }
+
         /* Cards */
         .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 16px; }
         .demo-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 18px; }
         .demo-card h3 { font-size: 15px; margin-bottom: 6px; }
         .demo-card p { font-size: 13px; color: #64748b; }
-        .starter-links { display: flex; gap: 12px; }
-        .starter-links a { color: #2563eb; font-weight: 600; font-size: 14px; text-decoration: none; }
-        .starter-links a:hover { text-decoration: underline; }
+        .starter-links { display: flex; gap: 16px; flex-wrap: wrap; }
+        .starter-links a { color: #2563eb; font-weight: 600; font-size: 14px; text-decoration: none; padding: 10px 14px; background: #eff6ff; border-radius: 8px; border: 1px solid #bfdbfe; }
+        .starter-links a:hover { background: #dbeafe; }
+
+        /* Forms & Interactive Area */
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 12px; }
+        .form-group { display: flex; flex-direction: column; gap: 6px; }
+        .form-group.full-width { grid-column: span 2; }
+        label { font-size: 13px; font-weight: 600; color: #334155; }
+        input, select, textarea { padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-family: inherit; font-size: 14px; outline: none; }
+        input:focus, select:focus, textarea:focus { border-color: #2563eb; ring: 2px solid #93c5fd; }
+        textarea { resize: vertical; min-height: 80px; }
+
+        .api-controls { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+        .console-output { background: #0f172a; color: #38bdf8; padding: 16px; border-radius: 10px; font-family: 'Consolas', 'Courier New', monospace; font-size: 13px; max-height: 250px; overflow-y: auto; white-space: pre-wrap; margin-top: 12px; }
+        .status-pill { font-size: 11px; padding: 3px 8px; border-radius: 12px; font-weight: bold; }
+        .pill-live { background: #dcfce7; color: #166534; }
+        .pill-local { background: #fef3c7; color: #92400e; }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
             <h1>Web UI Components & Starter Kit</h1>
-            <p>A collection of reusable HTML/CSS UI components and clean starter templates.</p>
-            <p style="margin-top:8px; font-size:13px; color:#fde68a;">By Ch. Prudhvi Raj (2500080283) • KL University</p>
+            <p>A collection of reusable HTML/CSS UI components, clean starter templates, and an Express Mock REST API.</p>
+            <div class="badge-bar">
+                <span class="badge badge-html">HTML5</span>
+                <span class="badge badge-css">CSS3</span>
+                <span class="badge badge-node">Node.js Express</span>
+                <span class="badge badge-api">REST API Ready</span>
+            </div>
+            <p style="margin-top:12px; font-size:13px; color:#fde68a;">By Ch. Prudhvi Raj (2500080283) • KL University</p>
         </header>
 
+        <!-- Starters -->
         <div class="section-box">
             <h2>1. Production Starter Templates</h2>
             <div class="starter-links">
@@ -50,29 +83,226 @@
             </div>
         </div>
 
+        <!-- Buttons -->
         <div class="section-box">
             <h2>2. Button Component Kit</h2>
             <div class="component-row">
-                <button class="btn btn-primary">Primary Action</button>
-                <button class="btn btn-secondary">Secondary Outline</button>
-                <button class="btn btn-success">Success State</button>
-                <button class="btn btn-danger">Destructive Action</button>
+                <button class="btn btn-primary" onclick="alert('Primary button clicked!')">Primary Action</button>
+                <button class="btn btn-secondary" onclick="alert('Secondary button clicked!')">Secondary Outline</button>
+                <button class="btn btn-success" onclick="alert('Success action clicked!')">Success State</button>
+                <button class="btn btn-danger" onclick="alert('Destructive action clicked!')">Destructive Action</button>
+                <button class="btn btn-dark" onclick="alert('Dark theme action clicked!')">Dark Theme</button>
             </div>
         </div>
 
+        <!-- Cards -->
         <div class="section-box">
-            <h2>3. Content Cards</h2>
+            <h2>3. Content & Feature Cards</h2>
             <div class="cards-grid">
                 <div class="demo-card">
                     <h3>Feature Spotlight</h3>
-                    <p>Clean card layout with responsive padding and subtle border styling.</p>
+                    <p>Clean card layout with responsive padding and subtle border styling for product highlights.</p>
                 </div>
                 <div class="demo-card">
                     <h3>Modular Design</h3>
                     <p>Easily drops into any modern responsive webpage with minimal styling overhead.</p>
                 </div>
+                <div class="demo-card">
+                    <h3>Full-Stack Sync</h3>
+                    <p>Populate and hydrate cards dynamically via the built-in Node.js Mock API endpoint <code>/api/users</code>.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Live Backend API Playground -->
+        <div class="section-box">
+            <h2>
+                <span>4. Backend REST API Playground (Live)</span>
+                <span id="backendStatusPill" class="status-pill pill-local">Checking Backend...</span>
+            </h2>
+            <p style="font-size: 14px; color: #64748b; margin-bottom: 14px;">
+                Interact with the Node.js Express mock server endpoints running on <code>/api/*</code>.
+            </p>
+
+            <div class="api-controls">
+                <button class="btn btn-primary" onclick="fetchComponents()">Fetch /api/components</button>
+                <button class="btn btn-secondary" onclick="fetchUsers()">Fetch /api/users</button>
+                <button class="btn btn-dark" onclick="fetchSubmissions()">Fetch /api/submissions</button>
+                <button class="btn btn-secondary" onclick="checkHealth()">Health Check</button>
+            </div>
+
+            <!-- Feedback Submission Form -->
+            <form id="componentFeedbackForm" onsubmit="submitFeedback(event)" style="margin-top: 16px; border-top: 1px solid #e2e8f0; padding-top: 16px;">
+                <h3 style="font-size: 15px; margin-bottom: 10px; color: #1e293b;">Submit Component Review / Test Data (POST /api/feedback)</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="fbName">Your Name *</label>
+                        <input type="text" id="fbName" placeholder="e.g. Ch. Prudhvi Raj" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fbEmail">Your Email</label>
+                        <input type="email" id="fbEmail" placeholder="e.g. 2500080283@kluniversity.in">
+                    </div>
+                    <div class="form-group">
+                        <label for="fbComponent">Component Evaluated</label>
+                        <select id="fbComponent">
+                            <option value="Button Kit">Button Component Kit</option>
+                            <option value="Content Cards">Content Cards</option>
+                            <option value="HTML5 Boilerplate">HTML5 Starter</option>
+                            <option value="Landing Starter">Landing Page Starter</option>
+                            <option value="REST Backend">Express Mock Server</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="fbRating">Rating (1 to 5)</label>
+                        <select id="fbRating">
+                            <option value="5">⭐⭐⭐⭐⭐ (5 - Exceptional)</option>
+                            <option value="4">⭐⭐⭐⭐ (4 - Great)</option>
+                            <option value="3">⭐⭐⭐ (3 - Average)</option>
+                            <option value="2">⭐⭐ (2 - Needs Work)</option>
+                            <option value="1">⭐ (1 - Buggy)</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="fbMessage">Feedback / Review Notes *</label>
+                        <textarea id="fbMessage" placeholder="Type your observations, feature suggestions, or test notes..." required></textarea>
+                    </div>
+                </div>
+                <div style="margin-top: 12px; display: flex; align-items: center; gap: 12px;">
+                    <button type="submit" class="btn btn-success">Submit to Backend &rarr;</button>
+                    <span id="submitNotice" style="font-size: 13px; font-weight: 600;"></span>
+                </div>
+            </form>
+
+            <div style="margin-top: 16px;">
+                <label style="font-weight:600;">Live API Console Output:</label>
+                <pre id="apiConsole" class="console-output">// Click an API button above or submit a review to view live server JSON responses...</pre>
             </div>
         </div>
     </div>
+
+    <script>
+        const API_BASE = '';
+        const consoleEl = document.getElementById('apiConsole');
+        const pillEl = document.getElementById('backendStatusPill');
+
+        async function checkHealth() {
+            try {
+                const res = await fetch(`${API_BASE}/api/health`);
+                if (res.ok) {
+                    const data = await res.json();
+                    pillEl.className = 'status-pill pill-live';
+                    pillEl.textContent = `Online (Port ${data.port || 5050})`;
+                    logToConsole(data);
+                    return true;
+                }
+            } catch (e) {
+                pillEl.className = 'status-pill pill-local';
+                pillEl.textContent = 'Static / Offline Mode';
+                logToConsole({
+                    info: 'Backend server is offline or running statically without Node.js.',
+                    hint: 'Run "npm start" in terminal to enable live Express REST API endpoints.'
+                });
+                return false;
+            }
+        }
+
+        async function fetchComponents() {
+            try {
+                const res = await fetch(`${API_BASE}/api/components`);
+                if (!res.ok) throw new Error('Status: ' + res.status);
+                const data = await res.json();
+                logToConsole(data);
+            } catch (e) {
+                logToConsole({
+                    warning: 'Could not reach GET /api/components',
+                    fallback: [
+                        { name: "Button Kit", status: "Active" },
+                        { name: "Content Cards", status: "Active" },
+                        { name: "Starters", status: "Active" }
+                    ]
+                });
+            }
+        }
+
+        async function fetchUsers() {
+            try {
+                const res = await fetch(`${API_BASE}/api/users`);
+                if (!res.ok) throw new Error('Status: ' + res.status);
+                const data = await res.json();
+                logToConsole(data);
+            } catch (e) {
+                logToConsole({
+                    warning: 'Could not reach GET /api/users',
+                    fallbackUsers: [
+                        { name: "Ch. Prudhvi Raj", id: "2500080283", role: "Lead Student Developer" }
+                    ]
+                });
+            }
+        }
+
+        async function fetchSubmissions() {
+            try {
+                const res = await fetch(`${API_BASE}/api/submissions`);
+                if (!res.ok) throw new Error('Status: ' + res.status);
+                const data = await res.json();
+                logToConsole(data);
+            } catch (e) {
+                logToConsole({ warning: 'Could not reach GET /api/submissions' });
+            }
+        }
+
+        async function submitFeedback(e) {
+            e.preventDefault();
+            const submitNotice = document.getElementById('submitNotice');
+            const payload = {
+                name: document.getElementById('fbName').value,
+                email: document.getElementById('fbEmail').value,
+                component: document.getElementById('fbComponent').value,
+                rating: document.getElementById('fbRating').value,
+                message: document.getElementById('fbMessage').value
+            };
+
+            submitNotice.style.color = '#2563eb';
+            submitNotice.textContent = 'Sending to backend...';
+
+            try {
+                const res = await fetch(`${API_BASE}/api/feedback`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (res.ok) {
+                    const data = await res.json();
+                    submitNotice.style.color = '#16a34a';
+                    submitNotice.textContent = 'Submitted successfully!';
+                    logToConsole(data);
+                    document.getElementById('componentFeedbackForm').reset();
+                } else {
+                    throw new Error('Server returned ' + res.status);
+                }
+            } catch (err) {
+                // LocalStorage Fallback
+                const localSubmissions = JSON.parse(localStorage.getItem('sample_submissions') || '[]');
+                localSubmissions.push({ ...payload, submittedAt: new Date().toISOString() });
+                localStorage.setItem('sample_submissions', JSON.stringify(localSubmissions));
+
+                submitNotice.style.color = '#d97706';
+                submitNotice.textContent = 'Saved to browser storage (API offline)';
+                logToConsole({
+                    warning: 'Backend API offline - saved to browser localStorage',
+                    entry: payload
+                });
+            }
+        }
+
+        function logToConsole(data) {
+            consoleEl.textContent = JSON.stringify(data, null, 2);
+        }
+
+        // Initialize status check
+        window.addEventListener('DOMContentLoaded', checkHealth);
+    </script>
 </body>
 </html>

@@ -1,0 +1,58 @@
+{
+  "components": [
+    {
+      "id": "btn-kit",
+      "name": "Button Component Kit",
+      "category": "Buttons",
+      "variants": ["Primary", "Secondary", "Success", "Danger"],
+      "status": "stable"
+    },
+    {
+      "id": "card-kit",
+      "name": "Responsive Content Cards",
+      "category": "Containers",
+      "variants": ["Spotlight", "Modular"],
+      "status": "stable"
+    },
+    {
+      "id": "html5-boilerplate",
+      "name": "HTML5 Baseline Boilerplate",
+      "category": "Starters",
+      "file": "starters/html5-starter/index.html",
+      "status": "ready"
+    },
+    {
+      "id": "landing-template",
+      "name": "Modern Hero Landing Starter",
+      "category": "Starters",
+      "file": "starters/landing-starter/index.html",
+      "status": "ready"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Ch. Prudhvi Raj",
+      "role": "Lead Student Developer",
+      "idNumber": "2500080283",
+      "department": "CSE / FED",
+      "institution": "KL University"
+    },
+    {
+      "id": 2,
+      "name": "Aarav Sharma",
+      "role": "Peer Reviewer",
+      "idNumber": "2500080102",
+      "department": "CSE",
+      "institution": "KL University"
+    },
+    {
+      "id": 3,
+      "name": "Ananya Reddy",
+      "role": "UI/UX Contributor",
+      "idNumber": "2500080145",
+      "department": "CSE",
+      "institution": "KL University"
+    }
+  ]
+}
